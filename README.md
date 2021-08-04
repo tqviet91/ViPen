@@ -1,6 +1,6 @@
-# Optimized_Solpen
+# ViPen: Accurate 6-DOF Augmented Reality Tool for Vision Guided Robotics
 
-This repo tries to improve the fps of the original Icosahedron pen repo.
+This repo tries to improve the fps of the original ViPen repo.
 
 The highest fps is 24, which was tested on Ubuntu 20.04, Ryzen 9, 4.7Ghz, Ram 64 GB.
 
