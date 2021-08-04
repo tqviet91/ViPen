@@ -6,7 +6,7 @@ The highest fps is 24, which was tested on Ubuntu 20.04, Ryzen 9, 4.7Ghz, Ram 64
 
 ## Requirements
 
-Python 3.8 or later with all [requirements.txt](https://github.com/quocviet91/Optimized_Solpen/blob/master/requirements.txt) dependencies installed. To install run:
+Python 3.8 or later with all [requirements.txt](requirements.txt) dependencies installed. To install run:
 
 ```bash
 $ pip install -r requirements.txt
@@ -18,14 +18,13 @@ $ pip install -r requirements.txt
 
 ## Configuration
 
-Open `./config/config.py` to setup all neccessary params from this [file](https://github.com/quocviet91/Optimized_Solpen/blob/master/config/config.py).
-
+Open `./config/config.py` to setup all neccessary params.
 Remember to modify the video name for processing.
 
 
 ## Run inference
 
-To achieve better fps, try to configurate [config.py](https://github.com/quocviet91/Optimized_Solpen/blob/master/config/config.py):
+To achieve better fps, try to configurate ```config.py```
 
 ```
   self.online_Calib           = False
@@ -78,7 +77,7 @@ To achieve better fps, try to configurate [config.py](https://github.com/quocvie
 - In this project, the Aruco markers are designed to fit at the centers of two polygons (Pentagon and Hexagon) as shown in Fig.3 belows:
 
 <p align="center">
-    <img width="800" src="https://github.com/quocviet91/Optimized_Solpen/blob/master/images/Marker_Design.PNG" alt="Material Bread logo">
+    <img width="800" src="images/Marker_Design.PNG" alt="Material Bread logo">
 </p>
 
 <p align="center"> <b>Fig.3. </b> Aruco markers with polygon border. </p>  
@@ -87,7 +86,7 @@ To achieve better fps, try to configurate [config.py](https://github.com/quocvie
 Four pyramidal levels are used in our setting. The resolutions of marker are 800x800, 400x400, 200x200, and 100x100 as shown in <b>Fig.4.</b>, the highest resolution represents for closest distance, while the lower resolutions represent for further distances.
 
 <p align="center">
-    <img width="800" src="https://github.com/quocviet91/Optimized_Solpen/blob/master/images/pyramid_images.png">
+    <img width="800" src="images/pyramid_images.png">
 </p>
 
 <p align="center"> <b>Fig.4. </b> Four-level pyramidal images. </p>
@@ -95,7 +94,7 @@ Four pyramidal levels are used in our setting. The resolutions of marker are 800
 - Edge pixels of each Aruco marker are extracted by analyzing the fourth level pyramidal images (resolution 100x100) with the grayscale range fromm 100~160. All position of 2D edge samples are collected and the corresponding 3D coordinates are computed as shown in <b>Fig.5.</b>
 
 <p align="center">
-    <img width="800" src="https://github.com/quocviet91/Optimized_Solpen/blob/master/images/contour_extraction.png">
+    <img width="800" src="images/contour_extraction.png">
 </p>
 
 <p align="center"> <b>Fig.5. </b> Aruco marker and the corresponding edge pixels. </p>
@@ -122,7 +121,7 @@ Run:
 The truncated IcosaHedron  geometry is constructed from Icosahedron  with the 12 vertices truncated such that one-third of each edge is trimmed at each of both ends. It generates a polyhedron consisting of 32 surfaces (12 pentagonal and 20 hexagonal faces), 60 vertices, and 90 edges. The coordinate of the truncated icosahedron is defined at the center and vertices are a combination of 3D points belonging to the orthogonal rectangles (0,±1,±3φ), (±1,±3φ,0), (±3φ,0,±1) and the orthogonal cuboids (±2,±(1+2φ),±φ), (±(1+2φ),±φ,±2), (±φ,±2,±(1+2φ)) along with the orthogonal cuboids (±1,±(2+φ),±2φ), (±(2+φ),±2φ,±1), (±2φ,±1,±(2+φ)), where φ = (1+√5)/2 is the golden mean. Using φ2 = φ + 1 one verifies that all vertices are on a sphere, centered at the origin, with the radius squared equal to 9φ + 10. The edges have a length of 2. We scale edge length into 25 mm for the proposed truncated Icosapen design as shown in <b>Fig. 6</b>.
 
 <p align="center">
-    <img width="800" src="https://github.com/quocviet91/Optimized_Solpen/blob/master/images/icosaDesign_Crop.png">
+    <img width="800" src="images/icosaDesign_Crop.png">
 </p>
 
 <p align="center"> <b>Fig.6. </b> Define Aruco markers and initialize rotation and translation vectors to center of Icosahedron. </p>
@@ -134,7 +133,7 @@ The truncated IcosaHedron  geometry is constructed from Icosahedron  with the 12
 - Next, try to stick all markers follwing the Net design as shown in <b>Fig.7 </b> belows:
 
 <p align="center">
-    <img width="1200" src="https://github.com/quocviet91/Optimized_Solpen/blob/master/images/Net_Design.png">
+    <img width="1200" src="images/Net_Design.png">
 </p>
 
 <p align="center"> <b>Fig.7. </b> Net design for Solpen. </p>
